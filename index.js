@@ -8,7 +8,7 @@ const arrify = require('arrify')
  * Creates a validator for the GraphQL query depth
  * @param {Number} maxDepth - The maximum allowed depth for any operation in a GraphQL document.
  * @param {Object} [options]
- * @param {String|RegExp|Function} options.ignore - Stops recursive depth checking based on a field name. Either a string or regexp to match the name, or a function that reaturns a boolean.
+ * @param {Array<String|RegExp|Function>} options.ignore - Stops recursive depth checking based on a field name. Either a string or regexp to match the name, or a function that reaturns a boolean.
  * @param {Function} [callback] - Called each time validation runs. Receives an Object which is a map of the depths for each operation. 
  * @returns {Function} The validator function for GraphQL validation phase.
  */
