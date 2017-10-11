@@ -230,6 +230,6 @@ Creates a validator for the GraphQL query depth
 | --- | --- | --- |
 | maxDepth | <code>Number</code> | The maximum allowed depth for any operation in a GraphQL document. |
 | [options] | <code>Object</code> |  |
-| options.ignore | <code>String</code> \| <code>RegExp</code> \| <code>function</code> | Stops recursive depth checking based on a field name. Either a string or regexp to match the name, or a function that reaturns a boolean. |
+| options.ignore | <code>Array.&lt;(String\|RegExp\|function())&gt;</code> | Stops recursive depth checking based on a field name. Either a string or regexp to match the name, or a function that reaturns a boolean. |
 | [callback] | <code>function</code> | Called each time validation runs. Receives an Object which is a map of the depths for each operation. |
 
