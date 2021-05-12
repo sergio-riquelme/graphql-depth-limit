@@ -71,7 +71,12 @@ function determineDepth(node, fragments, depthSoFar, maxDepth, context, operatio
         determineDepth(selection, fragments, depthSoFar + 1, maxDepth, context, operationName, options)
       ))
     case Kind.FRAGMENT_SPREAD:
-      return determineDepth(fragments[node.name.value], fragments, depthSoFar, maxDepth, context, operationName, options)
+      const fragment = fragments[node.name.value]
+      if (fragment) {
+        return determineDepth(fragment, fragments, depthSoFar, maxDepth, context, operationName, options)
+      }
+      
+      throw new Error(`uh oh! ${node.name.value} is not available as fragment`)
     case Kind.INLINE_FRAGMENT:
     case Kind.FRAGMENT_DEFINITION:
     case Kind.OPERATION_DEFINITION:
